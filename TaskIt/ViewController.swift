@@ -19,19 +19,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let date1 = Date.from(year: 2015, month: 01, day: 05)
-        let date2 = Date.from(year: 2015, month: 02, day: 20)
-        let date3 = Date.from(year: 2015, month: 03, day: 4)
-        
-        let task1 = TaskModel(task: "Study French", subTask: "Verbs", date: date1, completed:false)
-        let task2 = TaskModel(task: "Eat Dinner", subTask: "Burgers", date: date2, completed:false)
-        let taskArray = [task1, task2, TaskModel(task: "Gym", subTask: "Leg Day", date: date3, completed:false)]
-        
-        var completedArray = [TaskModel(task: "Code", subTask: "Task Project", date: date2, completed: true)]
-        
-        baseArray = [taskArray, completedArray]
-        
-        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -99,19 +86,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         println(indexPath.row)
-        performSegueWithIdentifier("showTaskDetail", sender: self)
-        func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return 25
+    performSegueWithIdentifier("showTaskDetail", sender: self)}
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "To do"
+        }
+        else {
+            return "Completed"
+        }
+    }
+
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let thisTask = baseArray[indexPath.section][indexPath.row]
+        
+        if indexPath.section == 0 {
+            var newTask = TaskModel(task: thisTask.task, subTask: thisTask.subTask, date: thisTask.date, completed: true)
+            baseArray[1].append(newTask)
+        }
+        else {
+            var newTask = TaskModel(task: thisTask.task, subTask: thisTask.subTask, date: thisTask.date, completed: false)
+            baseArray[0].append(newTask)
         }
         
-        func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            if section == 0 {
-                return "To do"
-            }
-            else {
-                return "Completed"
-            }
-        }
+    
+        baseArray[indexPath.section].removeAtIndex(indexPath.row)
+      
+        tableView.reloadData()
+        
     }
     
 
