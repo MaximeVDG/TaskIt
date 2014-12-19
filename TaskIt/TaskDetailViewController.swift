@@ -10,6 +10,8 @@ import UIKit
 
 class TaskDetailViewController: UIViewController {
     
+    var mainVC: ViewController!
+    
     var detailTaskModel : TaskModel!
 
     @IBOutlet weak var taskTextField: UITextField!
@@ -25,6 +27,7 @@ class TaskDetailViewController: UIViewController {
         
         self.taskTextField.text = detailTaskModel.task
         self.subtaskTextField.text = detailTaskModel.subTask
+        self.dueDatePicker.date = detailTaskModel.date
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,5 +35,16 @@ class TaskDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelButtonTapped(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    @IBAction func doneBarButtonPressed(sender: UIBarButtonItem) {
+        
+        var task = TaskModel(task: taskTextField.text, subTask: subtaskTextField.text, date: dueDatePicker.date, completed: false)
+        
+        mainVC.baseArray[0][mainVC.tableView.indexPathForSelectedRow()!.row] = task
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 
 }

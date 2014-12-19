@@ -17,6 +17,7 @@
 		50963ACC1A3C27810000EECB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50963ACA1A3C27810000EECB /* LaunchScreen.xib */; };
 		50963AD81A3C27810000EECB /* TaskItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50963AD71A3C27810000EECB /* TaskItTests.swift */; };
 		50963AE21A3C42A40000EECB /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50963AE11A3C42A40000EECB /* TaskCell.swift */; };
+		50E630CF1A42C37B004D2F05 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E630CE1A42C37B004D2F05 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		50963AD61A3C27810000EECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50963AD71A3C27810000EECB /* TaskItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItTests.swift; sourceTree = "<group>"; };
 		50963AE11A3C42A40000EECB /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		50E630CE1A42C37B004D2F05 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				50963AC11A3C27800000EECB /* AppDelegate.swift */,
+				50E630CE1A42C37B004D2F05 /* AddTaskViewController.swift */,
 				50963AC31A3C27800000EECB /* ViewController.swift */,
 				50227D661A400778003F614A /* TaskDetailViewController.swift */,
 				50227D641A40041D003F614A /* TaskModel.swift */,
@@ -173,6 +176,7 @@
 				TargetAttributes = {
 					50963ABB1A3C27800000EECB = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = NV595A8568;
 					};
 					50963AD01A3C27810000EECB = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -230,6 +234,7 @@
 				50227D651A40041D003F614A /* TaskModel.swift in Sources */,
 				50963AC21A3C27800000EECB /* AppDelegate.swift in Sources */,
 				50227D671A400778003F614A /* TaskDetailViewController.swift in Sources */,
+				50E630CF1A42C37B004D2F05 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,9 +359,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TaskIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -364,9 +372,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TaskIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
