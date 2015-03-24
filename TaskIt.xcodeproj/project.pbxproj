@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		50227D671A400778003F614A /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50227D661A400778003F614A /* TaskDetailViewController.swift */; };
 		50227D691A40105D003F614A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50227D681A40105D003F614A /* Date.swift */; };
+		5024370A1AB580AB00A5E280 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502437091AB580AB00A5E280 /* SettingsViewController.swift */; };
 		50963AC21A3C27800000EECB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50963AC11A3C27800000EECB /* AppDelegate.swift */; };
 		50963AC41A3C27800000EECB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50963AC31A3C27800000EECB /* ViewController.swift */; };
 		50963AC71A3C27810000EECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50963AC51A3C27810000EECB /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		50227D661A400778003F614A /* TaskDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		50227D681A40105D003F614A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		502437091AB580AB00A5E280 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		50963ABC1A3C27800000EECB /* TaskIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50963AC01A3C27800000EECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50963AC11A3C27800000EECB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				50963AC31A3C27800000EECB /* ViewController.swift */,
 				50227D661A400778003F614A /* TaskDetailViewController.swift */,
 				50E630CE1A42C37B004D2F05 /* AddTaskViewController.swift */,
+				502437091AB580AB00A5E280 /* SettingsViewController.swift */,
 				50963AE11A3C42A40000EECB /* TaskCell.swift */,
 				50227D681A40105D003F614A /* Date.swift */,
 				50E2C4B21A46CC8800C4D2C9 /* TaskItModel.xcdatamodeld */,
@@ -243,6 +246,7 @@
 				50227D671A400778003F614A /* TaskDetailViewController.swift in Sources */,
 				50E2C4B61A46CD8A00C4D2C9 /* TaskModel.swift in Sources */,
 				50E630CF1A42C37B004D2F05 /* AddTaskViewController.swift in Sources */,
+				5024370A1AB580AB00A5E280 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

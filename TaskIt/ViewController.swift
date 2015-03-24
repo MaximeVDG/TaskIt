@@ -84,18 +84,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         println(indexPath.row)
-    performSegueWithIdentifier("showTaskDetail", sender: self)}
+    performSegueWithIdentifier("showTaskDetail", sender: self)
+    }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 25
     }
 
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "To do"
-        }
-        else {
-            return "Completed"
+        
+        if fetchedResultsController.sections?.count == 1 {
+            let fetchedObjects = fetchedResultsController.fetchedObjects!
+            let testTask:TaskModel = fetchedObjects[0] as TaskModel
+            if testTask.completed == true {
+                return "Completed"
+            } else {
+                return "To do"
+            }
+        } else {
+            if section == 0 {
+                return "To do"
+            }
+            else {
+                return "Completed"
+            }
         }
     }
 
@@ -103,11 +115,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let thisTask = fetchedResultsController.objectAtIndexPath(indexPath) as TaskModel
         
-        if indexPath.section == 0 {
-            thisTask.completed = true
-        }
-        else {
+        if thisTask.completed == true {
             thisTask.completed = false
+        } else {
+            thisTask.completed = true
         }
         
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
