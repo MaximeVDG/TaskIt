@@ -22,6 +22,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+
         
         self.capitalizeTableView.delegate = self
         self.capitalizeTableView.dataSource = self
